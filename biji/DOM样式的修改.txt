@@ -1,0 +1,26 @@
+			DOM样式的修改：       修改的是行内式样式
+				对象.style.属性名=属性值;
+
+
+
+				CSS  					DOM
+
+				width					width
+				height					height
+				background-color      			backgroundColor
+				font-size					fontSize
+				border-color				borderColor
+				... 					...
+			DOM样式值的获取：
+				1.对象.style.属性名	
+					只能获取行内样式
+				2.
+					window.getComputedStyle(对象,null)
+					获取指定对象的所有样式
+				3.样式的操作
+				样式的获取
+					对象.style.样式名
+					window.getComputedStyle(对象,null)
+					offset-名称(返回偏移量)			只读
+
+      getAttribute   转化为相对路径

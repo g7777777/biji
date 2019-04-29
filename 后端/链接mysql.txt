@@ -1,0 +1,24 @@
+var mysql=require('mysql');//引入模块
+//操作MySQL
+var connection =mysql.createConnection({//基本设置   信息对就反馈connection对象
+    host:"127.0.0.1",//要连接的主机信息
+    port:3306,//端口号
+    user:'root',//库用户名
+    password:'root',//库用户密码
+    database:'student'//库名
+});
+
+connection.connect();//调用后才是真正建立连接
+
+connection.query(sql,[sname,sid],function (err,result) {//sql是要执行的语句，后追加的数组为填到sql语句?位置的数据，        函数第一个参数是错误，第二个为取到的结果。
+    if (err) {
+        console.log(err);
+    }else{
+        console.log(result);//返回类数组	[ RowDataPacket { sid: 1001, sname: 'aaa' },
+  		//	RowDataPacket { sid: 1002, sname: 'bbb' },
+  		//	RowDataPacket { sid: 1003, sname: 'ccc' },
+ 		//	 RowDataPacket { sid: 2222, sname: 'liux' },
+ 		//	 RowDataPacket { sid: 9527, sname: '周星星' } ]
+    }
+});
+connection.end();//结束数据库连接

@@ -1,0 +1,58 @@
+选取每个父元素的第一个子元素,可能找到多个          	:first-child
+			数量只能是0或1		:first
+
+				第index个		:nth-child(index)
+如果某个元素是它父元素中唯一的子元素就匹配		:only-child
+
+表单中type=image的按钮以及<button>按钮在表单中都有submit的功能
+
+css方法：
+                1） 设置样式，两个参数，代表属性名称属性值
+                $("div").css("color", "red");
+                $("div").css("color", "red").css("background-color", "#ddd");
+
+                2）设置样式，一个参数，参数是一个json格式的对象
+                $("div").css({"color":"green", "margin": "10px"});
+                设置时返回找到的元素本身，因此可以连缀
+
+                3） 获取样式，一个参数，代表样式名
+                获取时返回的是属性值，可能操作属性值的类型相关的方法
+                $("div").css("color");  只获取找到的第一个DOM元素的color值  针对颜色，设置的是颜色名或十六进制颜色会获取成rgb
+	 	1) addClass(class名) 可以有多个class名,用空格隔开
+               	2) removeClass(class名)  可以有多个class名,用空格隔开, 如果无参，则元素上的class全部删除
+              		3) toggleClass(class名)   如果有这个class名,就remove，如果没有则add	用于切换操作
+
+jquery对象转原生dom对象
+	方法一	jQuery对象[index]
+	方法二 	get(index)	有参数得到单个	无参数得到集合中的所有dom对象形成的一个数组
+原生对象转jq对象
+	var d = document.getElementById("box1");
+       	var $d = $(d);
+
+对元素属性设置:
+            attr("属性名", "属性值")  还可以设置自定义属性
+            attr({..});
+
+            获取
+            attr("属性名")
+
+            移除属性
+            $("#pic").removeAttr("title")
+
+            对于表单元素中可以选择的radio, checkbox等
+            $("#like").attr("checked")
+                undefined    没有设置checked
+            $("#like").attr("checked")
+                "checked"
+
+	disabled=''	禁用input元素,可用  removeAttr或removeProp
+
+            prop()  用法同上 	只有checked的返回值与attr不同	不会展示到dom结构中,但可以用
+                var s = $("#like").prop("checked");
+               返回	true  	false
+操作文本
+	内容操作   html()   		内容操作text()	值操作val() 获取	值操作通常用于表单文本框
+            	标签会生效html('s')  	纯文本   text('s')	          val('s')设置
+
+
+

@@ -1,0 +1,21 @@
+创建一个新的存储库
+
+git init
+git add README.md
+git add .		所有文件添加到git暂存区
+git commit -m  '备注'         				提交到本地仓库
+git remote add origin https://github.com/g7777777/werwqe.git//访问方式及库地址
+		git@github.com:g7777777/werwqe.git 需要线上库创建ssh密钥	密钥在本地的C:\Users\Dell\.ssh\id_rsa.pub
+git push -u origin master推送本地仓库的内容
+git pull origin master	初始化目录从线上拉取数据
+ssh和https同库不同名
+
+git status 检查暂存区
+ssh-keygen -t rsa -C "邮箱地址"   	创建SSH key
+git commit -m '备注'         提交到本地仓库
+git config user.name	提交的用户名和mail
+git clone 库地址     克隆
+
+在线添加readme.md用来说明项目
+
+万一进入编辑模式退出     :q!

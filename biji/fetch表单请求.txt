@@ -1,0 +1,19 @@
+//options是一个对象
+{
+method:请求方式，默认为get;
+body:           http的请求参数   如：用户，密码;
+
+headers:      http的请求头  默认为空;//告诉后端发送的数据类型
+credentials:  默认为omit，忽略的意思，也就是不带cookie;
+还有两个参数，      same-origin，意思就是同源请求带cookie;
+	            include,表示无论跨域还是同源请求均带cookie
+}
+fetch(url,options).then(
+//第一个then的函数里面处理的是包装后的（响应）response的格式
+res=>{return res.json()};
+//可以通过
+//text()返回字符串，
+//json()返回结果和JSON.parse(responseText)一样
+).then(
+//后面then默认接受上一个then的返回
+).

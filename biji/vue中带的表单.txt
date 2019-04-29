@@ -1,0 +1,8 @@
+    methods: {
+        getData() {
+          axios.get("./a.json").then((res)=> {
+            console.log(res.data)
+            this.list = res.data
+          })
+        }
+      }

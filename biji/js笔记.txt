@@ -1,0 +1,110 @@
+布尔类型             confirm
+true是
+false否
+
+toFixed() 方法可把 Number 四舍五入为指定小数位数的数字。
+
+var o = new Object(123);
+console.log(o); // => Number对象
+o = new Object(true);
+console.log(o); // => Boolean对象
+o = new Object('abc');
+console.log(o); // => String对象
+
+点击事件onclick
+o.selectionStart=0;选中的起点
+o.selectionEnd=0;选中的终点
+输出
+Math.pow(3,2) 3的二次方;
+Math.random();生成0-1随机小数
+parseFloat();转浮点型
+parseInt();转整数型
+write打印
+prompt();弹出输入框
+confirm();弹出确认框
+alert();弹出
+
+
+字符串练习
+	length                  			字符串个数
+	方法：
+	trim();                 			去除首尾空格
+	charAt(index)		                        查找指定位置的字符
+	concat(str,....,strx)				拼接字符串
+	indexOf (str,formIndex) 			查找子串在母串中位置(第一次出现的位置)       找不到 -1
+	lastIndexOf                         		从后面查找子串在母串中位置(第一次出现的位置)  
+	replace                             		只能替换第一个
+	slice(start,end)  				字符串截取      [start,end)
+	split(sp)                                       分割字符串
+	substr(start,length) 				截取字符串     (一个值开始到结束)(值开始到第二个值位置结束)
+	substring(start,stop) 				截取(开始结束)		[start,end)
+	toLowerCase       				转换为小写
+	toUpperCase 					转换为大写
+
+
+循环
+switch();分支
+default:;//未完成时;运行default后的语句
+
+while循环for循环
+break是结束整个循环体，
+continue是结束单次循环,
+fun中单用return可以不执行下面的代码
+
+document.getElementById();获取此ID的节点
+	o.getElementsByTagName('');标签名内容集合
+o.innerHTML=time;ID内容赋值
+
+
+刷新页面(定时器)
+setTimeout(函数名(或操作),1000);等待1秒后弹出一个对话框
+setInterval(函数名(或操作),1000);每隔1秒弹出一个对话框
+停止定时器
+clearInterval();
+其他用法1
+setTimeout(函数名,时间,函数变量);
+其他用法2
+setTimeout('函数名(函数变量)',时间);
+
+支持正则表达式的 String 对象的方法
+方法	描述	
+o.search()	检索与正则表达式相匹配的值。
+   match()	找到一个或多个正则表达式的匹配	返回
+  replace()	替换匹配的子串。
+     split()	把字符串分割为字符串数组。
+字符集：
+    任意匹配：  []   匹配任意一个
+    范围匹配：  [0-9]  [a-z] [A-Z]
+    排除匹配：  [^0-9]  非数字   [^a-zA-Z]
+元字符：
+	\d         [0-9]    数字
+	\w  	   字母和数字   [0-9a-zA-Z]
+	\s 		   空格  换行  缩进
+
+	\D         非数字  [^0-9]
+	\W         非字母和数字  [^0-9a-zA-Z]
+	\S         非空格、换行、缩进  
+量词：	规则出现次数
+?  	零或者一次	
+*    	零或者多次
++   	至少出现一次
+{m}  	  m次		数字只出现6次    正则p=/^\d\d{5}$/
+{m,n} 	至少m次，至少n次
+{m,} 	至少m次
+$ 	以..结尾
+^	以..开头
+\	转义字符	如想要打.直接打不行用\.表示
+正则对象的方法
+正则表达式对象.test(要测试的内容)	返回false   和  true  内容是否符合正则
+
+时间
+var date=new Date();
+get 变为set为设置
+date.getTime();        指定的日期和时间距 1970 年 1 月 1 日午夜（GMT 时间）之间的毫秒数
+date.getFullYear();    获取年
+date.getMonth()+1;       月
+date.getDay()+1;       日
+date.getHours();       小时
+date.getMinutes();     分
+date.getSeconds();     秒
+date.getMilliseconds();毫秒

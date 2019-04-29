@@ -1,0 +1,101 @@
+事件:  
+可以理解为:一件事
+	以on前缀开始   on事件名
+事件不会自己执行,需要触发(事件只要被触发才可以执行)
+
+事件三要素:
+	事件对象
+	事件名称
+	事件处理函数
+
+常见事件写法:
+   嵌入式
+	<button onclick='alert("hello")'>点击按钮</button>
+	优点:简单易懂
+	缺点:将JavaScript代码与html代码混为一体,不利于多人协作开发
+   脚本模型
+	在JavaScript中完成事件绑定
+	obj.onclick=function(){};
+ 	主流,最常用                   
+	事件中this指的是当前事件对象
+
+   W3C事件写法
+	添加事件:appEventListener(事件名,事件函数,false )
+	删除事件:removeEventListener(事件名,事件函数,false)//移除事件必须与添加一致(用函数名保持一致)
+	obj.addEventListener('click',function(){alert('click')},false )
+
+
+图像
+onabort 	图像加载被中断
+onload 	某个页面或图像被完成加载
+onerror 	当加载文档或图像时发生某个错误
+
+焦点
+onfocus 		元素获得焦点
+onblur 		元素失去焦点
+
+键盘操作
+onkeypress 	某个键盘的键被按下或按住
+onkeydown 	某个键盘的键被按下
+onkeyup 		某个键盘的键被松开
+
+鼠标操作
+onmousedown 	某个鼠标按键被按下
+onmouseup 	某个鼠标按键被松开
+onmousemove 	鼠标被移动
+onmouseout 	鼠标从某元素移开		(新)onmouseleave  离开
+onmouseover 	鼠标被移到某元素之上 	(新)onmouseenter  进入
+onclick 	鼠标点击某个对象
+ondblclick 	鼠标双击某个对象
+onselect 	文本被选定
+
+onreset 	重置按钮被点击
+onsubmit 	提交按钮被点击 
+
+设置checkbox(复选框)的状态
+选中 "checked"='checked'或'checked'=true
+非选中"checked"=undefined或'checked'=false
+
+改变内容
+onchange 	用户改变域的内容
+
+窗口操作(UI事件)
+onresize 	窗口或框架被调整尺寸
+    unload 	用户退出页面
+    load	加载
+    scroll	滚动
+    select  	选中
+    focus   	获取焦点
+    blur	失去焦点事件
+	
+事件流：事件传递
+	冒泡：事件的传递由最具体的元素，层层向外传递，直到最外层元素      现代主流浏览器事件传递机制
+	捕获:y事件的传递由最外层，向内层层传递，直到最具体元素
+
+阻止事件流(冒泡)：
+	stopPropagation()       谷歌和火狐
+	cancelBubble=true;	   兼容万恶的IE
+
+事件对象:	在事件触发时，由浏览器传递给事件的	对象.事件=fun(e){}
+	接收事件对象：在事件处理函数内接收	   e为该事件的对象	则e=一个合集,里面有各种数据
+
+	type		类型
+	target		目标
+	clientX   pageX  	鼠标x位置
+	clientY   pageY	鼠标y位置
+
+事件对象兼容性写法：e=e||window.event;
+
+
+
+form表单：用来进行前后端数据交互
+	action  :数据将要提交的地址URL
+	method:get(GET)  post(POST)   HTTP协议  
+		get:   suceess.html?username='jack'&pwd='123456'    简单  	安全性隐患  传输内容有限制
+		post:  suceess.html   		安全性高，没有传输大小限制	麻烦
+		onsubmit:  提交事件
+
+设置checkbox(复选框)的选中状态
+$('input:checkbox').attr("checked", 'checked');
+		或'checked',true
+	前后端交互：请求--应答  模式

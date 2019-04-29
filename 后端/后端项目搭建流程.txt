@@ -1,0 +1,43 @@
+1.安装nodejs和npm
+
+2.选装cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+安装好之后可以使用cnpm代替npm
+
+3.全局安装express-generator
+cnpm install express-generator -g
+安装好之后可以使用express命令创建脚手架工程
+---------------------------------------------------------------
+4.使用express创建工程
+express --view=pug 工程名称
+
+5.使用工具（vscode）进入工程目录
+
+6.在工程根目录下安装工程所需依赖包
+cnpm install 
+(会检查当前目录下的package.json清单文件，将其中依赖包全部安装）
+
+7.启动工程测试
+npm start 
+即可开启3000端口的服务器
+为了调试方便，可安装supervisor
+cnpm install supervisor -g
+安装好之后可用supervisor node ./bin/www来启动工程
+
+//在前端请求设置头部文本类型
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					/json     //取决于请求的类型，告诉后端
+
+//post解析问题
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
+
+//跨域问题
+app.use('*', function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+})

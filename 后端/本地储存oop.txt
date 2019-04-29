@@ -1,0 +1,18 @@
+1.web存储：
+	cookie   早期
+	本地存储：
+		localStorage          永久存储
+		sessionStorage       临时存储(当页面关闭时，清除,只在当前页面有效
+
+	两个存储对象除了存储时间不同，用法类似,均拥有如下方法：
+		setItem(key,value)         		 设置存储内容
+		getItem(key)  				获取
+		removeItem(key)  			删除指定的存储内容
+		clear() 					清除(清空)
+		key(index)  				通过索引获取  key
+
+	注意：key和value需为字符串类型
+
+2.JSON对象
+	stringify		将对象转换为字符串格式
+	parse 		将字符串格式对象转换为对象类型

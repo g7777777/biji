@@ -1,0 +1,4 @@
+获取屏幕宽度  offsetwidth
+虚化10px    filter:blur(10px)
+1rem=html上的fontsize
+fontsize= 屏幕宽度*DPR/10

@@ -1,0 +1,36 @@
+13:30 2019/4/1213:30 2019/4/12数组内置方法：							是否修改原数组
+（1）栈方法（先进后出）						修改
+	push(item....item)   		  在数组末尾添加元素
+	pop			 删除数组末尾元素
+（2）队列方法(先进先出) 										修改
+	push()                		 在数组末尾追加元素
+	shift()			删除数组第一个元素
+（3）数组操作方法
+	concat(arr...)               	 数组合并                  			 返回新数组
+	unshift(item...)         		 在数组头部插入元素           		 修改
+	slice(start,end)       		 截取数组  [start,end)   		未修改
+	splice: 						                 修改
+		splice(index,howmany)   	删除数组元素 (删除条件是否符合,删几个)
+		splice(index,howmany,item...)  先删除，再添加(删后替换为item)
+（4）排序方法							修改
+	sort             排序(默认按照字符串排序)
+	reverse          倒叙
+（5）其他方法
+	join(sp)		 使用指定字符将数组元素拼接为字符串
+（6）新方法
+	forEach(fn) 		遍历
+		fn函数有三个参数
+			item   数组元素
+			index  索引
+			arr    数组自身
+
+	indexOf            		查找元素在数组中的位置       		找不到  -1
+	lastIndexOf 		从后向前查找数组中是否包含元素   找不到  -1
+	some(fn)  			fn 有三个参数            	//判断数组中是否有满足规则的(有一个即可)
+	every(fn)  			fn 有三个参数  		// 判断数组中是否均满足规则的
+	filter(fn)
+累加器
+var arr=[1,2,3,4,5]
+arr.reduce(function(a,b){})	a为数组中第一个值或用户给定的值,
+			b为遍历出的值,若a为用户输入的值,b分别遍历为1  2  3  4  5
+				若a不传实参,默认为数组中第一个值,b分别为2 3 4 5

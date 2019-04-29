@@ -1,0 +1,143 @@
+
+innerHTML  	开始标记和结束标记之间的内容,可赋值
+
+document  	(页面)文档对象
+length    	(节点)个数
+
+
+节点对象的属性：
+              可以创建属性  如this.abc='任意数值或者字符串';这个节点属性abc的值为:任意数值或者字符串.
+		一般用于切换图片样式清除上一个样式,
+
+		var index=0;//保存当前被选中的li的索引   默认值为0(默认第一个被选中)
+		var li=document.getElementById('imgs').children;//获取所有li
+		//遍历li
+		for (var i = 0; i < li.length; i++) {
+			li[i]._index=i;		//为每一个节点新增属性(_index),并且赋值为i
+			li[i].onclick=function() {
+				//点击前的被选中的li样式取消
+				li[index].className='';//清除上一个的样式
+				this.className="sel";//为点击的li设置样式
+				//修改index
+				index=this._index;//取出被点击的li的索引，赋值给index
+			}
+		}
+
+
+	body         	body元素对象	返回body标签
+	title        	标题		返回title内容
+	URL 		网页地址	返回页面的路径
+	links          	超链接    	返回HTMLCollection类型  是集合  索引  0       length
+	images         	图片	  	返回HTMLCollection类型  是集合  索引  0       length
+	forms          	有几个表单      返回HTMLCollection类型  是集合  索引  0       length
+
+   方法：
+	write		打印到页面
+	writeln		打印到页面(可识别换行(\n),但一般不适用)
+	getElementById	根据ID查找节点对象
+	getElementsByTagName	根据标签名查找	返回节点列表(NodeList)
+	getElementsByClassName(cls)	       样式名查找	(NodeList)
+	getElementsByName		       名称(name)查找	(NodeList)
+		返回值：错误时   看节点对象是否正确
+	
+
+
+   dom属性查找节点     
+	childNodes     获取所有的子节点(元素节点、文本节点)    返回NodeList类型   有索引 0开始 有length  节点个数
+	children       获取所有的(元素)子节点		       返回NodeList类型   有索引 0开始 有length  节点个数
+	firstChild     第一个子节点
+	lastChild      最后一个子节点
+	parentNode     父节点
+	previousSibling   上一个兄弟节点
+	nextSibling       下一个兄弟节点
+
+点击事件onclick
+
+   增加节点：
+	write()				写入页面(可写标签)
+	document.createElement();	创建节点
+	document.createTextNode();      创建文本节点     可对节点后追加(用appendChild)
+	obj.appendChild();    		可对对象的原 子节点后追加子节点
+	obj.insertBefore();		在指定节点前插入	父节点.方法(要插入的节点,指定哪个节点前)
+	document.body.appendChild();	body节点追加子节点
+
+     创建多个节点时可灵活使用argument.length属性,节点内容可用:循环语句+argument[i]+创建赋值子节点的函数,实现创建
+
+	//obj.innerHTML=   ;为对象内容赋值
+   复制节点：
+	obj.cloneNode(flag)      	flag是布尔类型    true时复制包含子节点  false时不包含子节点  默认为false
+
+   替换节点:
+	obj.replaceChild();		替换节点
+
+   删除节点:
+	obj.removeChild();		删除对象的子节点
+				/*
+				防误触
+				   if(confirm('是否删除')){
+					var tr0=this.parentNode.parentNode;//该行
+					tr0.parentNode.removeChild(tr0);
+				   }*/
+
+
+节点属性
+
+	HTML       	 DOM
+                                                                    
+	src  		src
+	title		title
+	href		href
+	action		action
+	alt 		alt
+
+通过getAttribute和setAttribute获取设置属性时,不用变形.
+
+设置(节点对象.setAttribute(属性名,值);)      获取(节点对象.getAttribute(属性名);)
+
+
+	for         	htmlFor
+	class 		className
+
+
+	1.节点属性值的设置
+		节点对象.属性名=值;      
+		节点对象[属性名]=值;   
+		节点对象.satAttribute(属性名,值);此方法不稳定
+
+	2.节点属性值的获取
+		节点对象.属性名
+	        节点对象[属性名];      
+		节点对象.getAttribute(属性名);这个获取的是相对路径
+
+选框修改属性
+
+	单选按钮	有checked属性是选中,注意:name相同时,才是排异的单选
+
+	多选按钮	有checked属性时	为选中,用js修改属性时	obj.checked=true;	
+									true为勾中,  
+									false为取消勾中
+
+	下拉框		有selected属性是选中,
+				得到下拉框选中的值	(下拉框的id).value
+
+					
+获取页面的宽度     offsetwidth
+
+1.web存储：
+	cookie   早期
+	本地存储：
+		localStorage          永久存储
+		sessionStorage       临时存储(当页面关闭时，清除,只在当前页面有效
+
+	两个存储对象除了存储时间不同，用法类似,均拥有如下方法：
+		setItem(key,value)         		 设置存储内容
+		getItem(key)  				获取
+		removeItem(key)  			删除指定的存储内容
+		clear() 					清除(清空)
+		key(index)  				通过索引获取  key
+
+	注意：key和value需为字符串类型
+
+2.JSON对象
+	stringify		将对象转换为字符串格式
+	parse 		将字符串格式对象转换为对象类型

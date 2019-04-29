@@ -1,0 +1,28 @@
+开发http服务器
+只需用node.js自带的http模块完成
+
+//引入http模块
+var http=require('http');
+
+http调用createServer方法对请求  响应进行处理，并接收返回值     创建server对象用于监听端口
+var server=http.createServer（（request请求对象，response响应对象,next）=>{
+对请求和响应处理    next()将控制权传递给下一个处理程序
+请求.method方法
+
+把响应发给前端
+response.writeHead（200，{'Content-Type':'text/html; charset=utf-8'}）//响应码    指定  相应类型：text/html    加上后可以使浏览器识别write的字符串标签
+
+向前端发送一些想要反馈的数据
+              .write('');
+              .send('');
+response.end();//响应到此终结
+}）;
+
+// 让服务器监听8080端口（开8080端口）
+server.listen(8080,err=>{
+if(!err){
+console.log('告诉启动者服务器运行在哪个端口  server is running at http://127.0.0.1:8080/')
+}
+});
+
+在字符串中用变量${变量}。
